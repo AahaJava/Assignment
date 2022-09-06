@@ -1,0 +1,27 @@
+micronaut:
+
+  server:
+    port:8001
+  application:
+    name: EMS
+datasources:
+  default:
+    url: ${JDBC_URL:`jdbc:mysql://localhost:3306/crud_db?characterEncoding=UTF-8`}
+    username: ${JDBC_USER:root}
+    password: ${JDBC_USER:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+
